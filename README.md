@@ -16,18 +16,19 @@ Upon initialization of the server, a Tor process will also be initialized, with 
  - Feel free to remove the Flask API altogether and instead repeatedly run this Python script with different queries. Add comments as you may see fit in the server code to print out responses, etc.
  - To be safe, navigate to `localhost:5000/exit` when you are finished, before quitting the Flask server. This is to explicitly end the Tor process; if the Tor process is not correctly stopped/cleared, follow the next instruction below. This step might not always be necessary, but it is just for best practices.
  - In the case that you see an error message saying a socket/port is already in use, run `ps -ef | grep tor` and find the Tor process and manually kill it using `kill -9 <PROCESS ID #>`. Note that you may have to use `sudo` to gain privileges to kill the Tor process. 
+ - If you would like to make modifications to the frontend, change the `index.html` file directly where it is; it needs to be left in the `templates` folder for Flask to be able to correctly find and render it.
 
 ## FAQ
-Q: Why do I need to use my own cookies/x-client-data information?
+Q: Why do I need to use my own cookies/x-client-data information?  
 A: Otherwise, Google will very likely think that you're a bot and won't respond with any search results at all. 
 
-Q: How do I extract `cookie` and `x-client-data`? 
+Q: How do I extract `cookie` and `x-client-data`?  
 A: Open up the developer tools console in a web browser like Chrome or Firefox. Navigate to the Network tab and click on a request that is made. If there's nothing there, refresh the page and watch it populate. Upon clicking a request, you should see a host of associated information, including request headers. You should be able to find fields such as `cookie` and `x-client-data` here.
 
-Q: I've included my `cookies` and `x-client-data` but Google still isn't responding with any results. What do I do?
+Q: I've included my `cookies` and `x-client-data` but Google still isn't responding with any results. What do I do?  
 A: Check if you are logged in to Google; cookies associated with a logged-in account are probably much more likely to not get categorized as a bot by Google.
 
-Q: Why not just use Tor Browser?
+Q: Why not just use Tor Browser?  
 A: It's arguably easier to just straight up use the Tor Browser, but even then, Google may still think you're a bot (possible due to many Google searches being made from the same Tor exit node). You could then, theoretically, just juxtapose two browser windows. This web app is just an easier/cleaner way to do this.
 
 ## Notes
