@@ -17,6 +17,7 @@ Upon initialization of the server, a Tor process will also be initialized, with 
  - To be safe, navigate to `localhost:5000/exit` when you are finished, before quitting the Flask server. This is to explicitly end the Tor process; if the Tor process is not correctly stopped/cleared, follow the next instruction below. This step might not always be necessary, but it is just for best practices.
  - In the case that you see an error message saying a socket/port is already in use, run `ps -ef | grep tor` and find the Tor process and manually kill it using `kill -9 <PROCESS ID #>`. Note that you may have to use `sudo` to gain privileges to kill the Tor process. 
  - If you would like to make modifications to the frontend, change the `index.html` file directly where it is; it needs to be left in the `templates` folder for Flask to be able to correctly find and render it.
+ - Files for previous attempts are stored in the `prev` folder.
 
 ## FAQ
 Q: Why do I need to use my own cookies/x-client-data information?  
